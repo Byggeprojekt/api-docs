@@ -1,0 +1,12 @@
+footer {
+  visibility: hidden;
+}
+
+footer > :first-child {
+  visibility: visible;
+}
+
+
+footer > :not(:first-child) {
+  display: none;
+}

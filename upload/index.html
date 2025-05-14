@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Upload - Byggeprojekt Web Services Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/remove_footer.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Upload";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Byggeprojekt Web Services Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../index.html">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../auth/index.html">Authentication</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../projects/index.html">Projects</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../folders/index.html">Folders</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../documents/index.html">Documents</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">Upload</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#upload">Upload</a></li>
+                
+                    <li><a class="toctree-l4" href="#request-purpose">Request Purpose</a></li>
+                
+                    <li><a class="toctree-l4" href="#request-type">Request Type</a></li>
+                
+                    <li><a class="toctree-l4" href="#request-endpoint">Request Endpoint</a></li>
+                
+                    <li><a class="toctree-l4" href="#request-parameters">Request Parameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#response-objects-and-fields">Response Objects and fields</a></li>
+                
+                    <li><a class="toctree-l4" href="#example-1">Example 1</a></li>
+                
+                    <li><a class="toctree-l4" href="#example-2">Example 2</a></li>
+                
+                    <li><a class="toctree-l4" href="#error-codes">Error codes</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../urlenc/index.html">URL encoding reference</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Byggeprojekt Web Services Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Upload</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="upload">Upload</h1>
+<h4 id="request-purpose">Request Purpose</h4>
+<p>Uploading document into system.</p>
+<h4 id="request-type">Request Type</h4>
+<p><strong>POST</strong></p>
+<h4 id="request-endpoint">Request Endpoint</h4>
+<p>/api/v0/auth/upload</p>
+<h4 id="request-parameters">Request Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>token</code></td>
+<td>Authentication token.</td>
+</tr>
+<tr>
+<td><code>folderId</code></td>
+<td>Identifier of folder into which should be uploaded files.</td>
+</tr>
+<tr>
+<td><code>isLastFileInSession</code></td>
+<td>Optional. <code>true</code> or <code>false</code> value for pointing if file or files last in upload session. If parameter not signed in request files will be uploaded like last in session</td>
+</tr>
+<tr>
+<td><code>uploadSessionId</code></td>
+<td>Optional. Required if some files was uploaded earlier and it is need upload files in the same upload session.</td>
+</tr>
+</tbody>
+</table>
+<p>Also to request must be attached file parts.</p>
+<h4 id="response-objects-and-fields">Response Objects and fields</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>statusCode</code></td>
+<td>Result code of request. Describes if request was successfully or unsuccessfully executed.</td>
+</tr>
+<tr>
+<td><code>statusMessage</code></td>
+<td>Description to statusCode.</td>
+</tr>
+<tr>
+<td><code>body</code></td>
+<td>Object with result for request.</td>
+</tr>
+<tr>
+<td><code>uploadSessionId</code></td>
+<td>Upload session identifier, should be used for next uploads in the same session.</td>
+</tr>
+<tr>
+<td><code>documents</code></td>
+<td>Array of document objects. See <a href="../documents/index.html#document-object">document object</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-1">Example 1</h4>
+<h5 id="request">Request</h5>
+<p>http://app.byggeprojekt.dk/api/v0/upload/uploadFile?token=218e104134ac40e584cec96bdd6089f5&amp;folderId=40243&amp;isLastFileInSession=true</p>
+<h5 id="response">Response</h5>
+<p>&nbsp;</p>
+<pre><code class="json">{
+    &quot;statusMessage&quot;:&quot;Success&quot;,
+    &quot;statusCode&quot;:200,
+    &quot;body&quot;: {
+        &quot;documents&quot;:[{
+            &quot;id&quot;:153832,
+            &quot;name&quot;:&quot;TEST_FILE.txt&quot;,
+            &quot;version&quot;:0,
+            &quot;parentFolderId&quot;:40243,
+            &quot;projectId&quot;:5376,
+            &quot;format&quot;:&quot;&quot;,
+            &quot;scale&quot;:&quot;&quot;,
+            &quot;revision_number&quot;:&quot;&quot;,
+            &quot;fileSize&quot;:8,
+            &quot;uploadDate&quot;:&quot;Aug 23, 2017 2:10:10 PM&quot;,
+            &quot;documentDescription&quot;:&quot;&quot;,
+            &quot;documentCreator&quot;:&quot;Jeff Beck - Company&quot;,
+            &quot;url&quot;:&quot;http://download.byggeprojekt.dk/dwnl/download/Z6SyuLaWePVbY3Qhnw71LnXwedfdERbq5ivSgLtcx3ZN3aBooSIyuSmy9UwUraIASwxzF7s-IhL0u8xNw7O4WFuXr4AnXPkdOUdV4HnGTIDpV72BkQYxiMiOzojpYVU1Eoj4kK7EjLqnNXb1X5w1sw==&quot;
+        }]
+    }
+}
+</code></pre>
+
+<h4 id="example-2">Example 2</h4>
+<h5 id="request_1">Request</h5>
+<p>http://localhost:8888/byggeprojekt/api/v0/upload/uploadFile?token=218e104134ac40e584cec96bdd6089f5&amp;folderId=40243&amp;isLastFileInSession=false</p>
+<h5 id="response_1">Response</h5>
+<p>&nbsp;</p>
+<pre><code class="json">{
+    &quot;statusMessage&quot;:&quot;Success&quot;,
+    &quot;statusCode&quot;:200,
+    &quot;body&quot;:{
+        &quot;uploadSessionId&quot;:&quot;1503486877394&quot;
+    }
+}
+</code></pre>
+
+<h4 id="error-codes">Error codes</h4>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>401</td>
+<td>Authentication problem</td>
+</tr>
+<tr>
+<td>402</td>
+<td>No <code>token</code> parameter</td>
+</tr>
+<tr>
+<td>413</td>
+<td>Wrong <code>folderid</code> parameter</td>
+</tr>
+<tr>
+<td>416</td>
+<td>Wrong <code>isLastFileInSession</code> parameter</td>
+</tr>
+<tr>
+<td>417</td>
+<td>No <code>folderid</code> parameter</td>
+</tr>
+<tr>
+<td>421</td>
+<td>No files attached</td>
+</tr>
+<tr>
+<td>431</td>
+<td>Current user have not permissions for uploading into folder</td>
+</tr>
+<tr>
+<td>444</td>
+<td>Application is not ready, try again after few minutes</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../urlenc/index.html" class="btn btn-neutral float-right" title="URL encoding reference"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../documents/index.html" class="btn btn-neutral" title="Documents"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../documents/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../urlenc/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Projects - Byggeprojekt Web Services Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/remove_footer.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Projects";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Byggeprojekt Web Services Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../index.html">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../auth/index.html">Authentication</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="index.html">Projects</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#projects">Projects</a></li>
+                
+                    <li><a class="toctree-l4" href="#request-purpose">Request Purpose</a></li>
+                
+                    <li><a class="toctree-l4" href="#request-type">Request Type</a></li>
+                
+                    <li><a class="toctree-l4" href="#request-endpoint">Request Endpoint</a></li>
+                
+                    <li><a class="toctree-l4" href="#request-parameters">Request Parameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#request-example">Request Example</a></li>
+                
+                    <li><a class="toctree-l4" href="#response-type">Response Type:</a></li>
+                
+                    <li><a class="toctree-l4" href="#response-example">Response Example</a></li>
+                
+                    <li><a class="toctree-l4" href="#response-objects-and-fields">Response Objects and fields</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../folders/index.html">Folders</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../documents/index.html">Documents</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../upload/index.html">Upload</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../urlenc/index.html">URL encoding reference</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Byggeprojekt Web Services Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Projects</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="projects">Projects</h1>
+<h4 id="request-purpose">Request Purpose</h4>
+<p>Get list of projects which are available for specified user.</p>
+<h4 id="request-type">Request Type</h4>
+<p><strong>GET</strong></p>
+<h4 id="request-endpoint">Request Endpoint</h4>
+<p>/api/v0/project/getprojects</p>
+<h4 id="request-parameters">Request Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>token</code></td>
+<td>Authentication token.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="request-example">Request Example</h4>
+<p>https://app.byggeprojekt.dk/api/v0/project/getprojects?token=13a6833433774dda8dd8ef8979d1180c</p>
+<h4 id="response-type">Response Type:</h4>
+<p><strong>json</strong></p>
+<h4 id="response-example">Response Example</h4>
+<pre><code class="json">{
+   &quot;statusMessage&quot;:&quot;Success&quot;,
+   &quot;statusCode&quot;:200,
+        &quot;body&quot;:{
+            &quot;projects&quot;:[
+                {&quot;id&quot;:1599,&quot;name&quot;:&quot;[02818] - P1&quot;}
+            ]
+        }
+}
+</code></pre>
+
+<h4 id="response-objects-and-fields">Response Objects and fields</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>statusCode</code></td>
+<td>Result code of request. Describes if request was successfully executed.</td>
+</tr>
+<tr>
+<td><code>statusMessage</code></td>
+<td>Description to statusCode.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>body</code></td>
+<td>Object with result for request.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>projects</code></td>
+<td>list with project objects.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Identifier of project.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Name of project.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../folders/index.html" class="btn btn-neutral float-right" title="Folders"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../auth/index.html" class="btn btn-neutral" title="Authentication"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../auth/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../folders/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
