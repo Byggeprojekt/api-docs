@@ -157,6 +157,7 @@
                 <h1 id="upload">Upload</h1>
 <h4 id="request-purpose">Request Purpose</h4>
 <p>Uploading document into system.</p>
+<h3 style="margin-top: -10px;"><code><b>Attention!</b> Allowed to upload files up to 16GB. Max request size 16GB.</code><h3>
 <h4 id="request-type">Request Type</h4>
 <p><strong>POST</strong></p>
 <h4 id="request-endpoint">Request Endpoint</h4>
@@ -222,16 +223,26 @@
 </table>
 <h4 id="example-1">Example 1</h4>
 <h5 id="request">Request</h5>
-<p>https://app.byggeprojekt.dk/webapp/api/v0/upload/uploadfile?token=218e104134ac40e584cec96bdd6089f5&amp;folderId=40243&amp;isLastFileInSession=true</p>
-<h5 id="response">Response</h5>
-<p>&nbsp;</p>
+<p>
+    https://app.byggeprojekt.dk/webapp/api/v0/upload/uploadfile?token=218e104134ac40e584cec96bdd6089f5&amp;folderId=40243&amp;isLastFileInSession=true<br>
+    Content-Type: multipart/form-data; boundary=--FormBoundary<br>
+    <br>
+    ----FormBoundary<br>
+    Content-Disposition: form-data; name="document"; filename="document0.txt"<br>
+    Content-Type: text/plain<br>
+    <br>
+    ----FormBoundary<br>
+    Content-Disposition: form-data; name="document"; filename="document1.pdf"<br>
+    Content-Type: application/pdf<br>
+</p>
+    <h5 id="response">Response</h5>
 <pre><code class="json">{
     &quot;statusMessage&quot;:&quot;Success&quot;,
     &quot;statusCode&quot;:200,
     &quot;body&quot;: {
         &quot;documents&quot;:[{
             &quot;id&quot;:153832,
-            &quot;name&quot;:&quot;TEST_FILE.txt&quot;,
+            &quot;name&quot;:&quot;document0.txt&quot;,
             &quot;version&quot;:0,
             &quot;parentFolderId&quot;:40243,
             &quot;projectId&quot;:5376,
@@ -250,7 +261,7 @@
 
 <h4 id="example-2">Example 2</h4>
 <h5 id="request_1">Request</h5>
-<p>http://localhost:8888/byggeprojekt/api/v0/upload/uploadfile?token=218e104134ac40e584cec96bdd6089f5&amp;folderId=40243&amp;isLastFileInSession=false</p>
+<p>http://localhost:8888/byggeprojekt/api/v0/upload/uploadFile?token=218e104134ac40e584cec96bdd6089f5&amp;folderId=40243&amp;isLastFileInSession=false</p>
 <h5 id="response_1">Response</h5>
 <p>&nbsp;</p>
 <pre><code class="json">{
